@@ -34,8 +34,6 @@ Other models and USB programming cables are planned, but **not supported in 1.0*
 2. Open it on your Android device and allow installation from that source when prompted.
 3. Open **Baofeng Programmer** and grant Bluetooth and location permissions for radio discovery.
 
-The APK is signed with the project's release key. An earlier development/debug build uses a different key: export important backups before uninstalling that build, then install the release. Future releases using the same release key can update normally.
-
 ## Program Your Radio
 
 1. Turn on Bluetooth on the phone and radio.
@@ -48,7 +46,7 @@ The overflow menu includes appearance, backup export/restore, and discarding loc
 
 ## Backups And Recovery
 
-Automatic backups are stored privately on the phone. Export important originals as `.bfp` files before uninstalling or clearing app data. Exported files contain your radio programming; share them deliberately.
+Automatic backups are stored privately on the phone. Export important originals as `.bfp` files before uninstalling or clearing app data. Exported files contain your radio programming.
 
 If a transfer fails, reconnect and read the radio again before writing. A multi-block write is not atomic and an interruption can leave a partially updated radio. The app retains the original and pre-write backups and does not report a write as successful until read-back verification completes.
 
