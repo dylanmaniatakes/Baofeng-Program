@@ -19,8 +19,8 @@ android {
         applicationId = "com.ticnitsi.baofengprogram"
         minSdk = 26
         targetSdk = 35
-        versionCode = 100
-        versionName = "1.0"
+        versionCode = providers.gradleProperty("appVersionCode").orNull?.toInt() ?: 100
+        versionName = providers.gradleProperty("appVersionName").orNull ?: "1.0"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -60,6 +60,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     sourceSets.getByName("main").assets.setSrcDirs(emptyList<String>())
@@ -83,4 +84,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
 
     debugImplementation("androidx.compose.ui:ui-tooling")
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.json:json:20240303")
 }

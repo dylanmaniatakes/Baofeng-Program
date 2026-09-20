@@ -4,7 +4,7 @@
 
 **Your radio. Your settings. No account required.**
 
-A simple Android Bluetooth programmer for the **Baofeng UV-5R Mini**, focused on analog memories and radio settings. Everything stays on your phone: no sign-in, subscription, cloud service, analytics, or Internet permission.
+A simple Android Bluetooth programmer for the **Baofeng UV-5R Mini**, focused on analog memories and radio settings. Radio programming stays on your phone, with no sign-in, subscription, or analytics. Internet access is used only for update checks and downloads you request from GitHub.
 
 [Download version 1.0](https://github.com/dylanmaniatakes/Baofeng-Program/releases/tag/v1.0)
 
@@ -17,6 +17,7 @@ A simple Android Bluetooth programmer for the **Baofeng UV-5R Mini**, focused on
 - Choose system, light, or dark appearance.
 - Keep local edits between sessions, review changes before writing, and export or restore backups.
 - Check affected blocks before writing and verify every write by reading it back.
+- Check GitHub for newer releases, download with your permission, and install through Android's confirmation screen.
 
 ## Supported Radios
 
@@ -52,13 +53,19 @@ If a transfer fails, reconnect and read the radio again before writing. A multi-
 
 Existing non-ASCII channel names are preserved unless edited; new names use printable English letters, numbers, and punctuation, up to 12 characters. Unsupported tone values are preserved when unchanged. A restore can reject unsupported edited values rather than guess a conversion.
 
+## Updates
+
+Choose **Check for updates** from the overflow menu. There are no background update checks. When a newer stable release is available, review its notes and choose **Download**. The app checks the downloaded APK's SHA-256, package name, version, and release-signing certificate before offering **Install update**.
+
+Android may ask you to allow updates from this app, and always controls the final installation confirmation. You can cancel the download or decline installation. Normal updates retain app data; builds signed with a different key cannot update one another. Radio memories and settings are never sent to GitHub.
+
 ## Build And Test
 
 Use Android Studio, or an Android SDK with platform 35 and JDK 17 or 21:
 
 ```sh
 cd Android
-./gradlew :app:assembleDebug :radio-core:test :app:lintDebug
+./gradlew :app:assembleDebug :radio-core:test :app:testDebugUnitTest :app:lintDebug
 ```
 
 The debug APK is created in `Android/app/build/outputs/apk/debug/`. See [release builds](docs/BUILDING.md) for signing your own APK.

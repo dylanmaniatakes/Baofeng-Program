@@ -34,6 +34,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.core.view.WindowCompat
 import com.ticnitsi.baofengprogram.ble.*
 import com.ticnitsi.baofengprogram.core.*
+import com.ticnitsi.baofengprogram.update.UpdateDialog
+import com.ticnitsi.baofengprogram.update.UpdateViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,6 +60,7 @@ private val Dark = darkColorScheme(primary = Color(0xFF7DD9C5), onPrimary = Colo
 
 @Composable
 private fun Programmer(vm: ProgramViewModel = viewModel()) {
+    val updates: UpdateViewModel = viewModel()
     val state by vm.state.collectAsStateWithLifecycle()
     val scan by vm.scanner.state.collectAsStateWithLifecycle()
     val dark = state.theme == "Dark" || (state.theme == "System" && isSystemInDarkTheme())
@@ -79,6 +82,7 @@ private fun Programmer(vm: ProgramViewModel = viewModel()) {
         var tab by rememberSaveable { mutableIntStateOf(0) }
         var menu by remember { mutableStateOf(false) }
         var appearance by remember { mutableStateOf(false) }
+        var updateDialog by rememberSaveable { mutableStateOf(false) }
         var confirm by remember { mutableStateOf<String?>(null) }
         var editor by rememberSaveable { mutableStateOf<Int?>(null) }
         val snackbar = remember { SnackbarHostState() }
@@ -109,6 +113,9 @@ private fun Programmer(vm: ProgramViewModel = viewModel()) {
                         ToolButton("More options", Icons.Default.MoreVert, onClick = { menu = true })
                         DropdownMenu(expanded = menu, onDismissRequest = { menu = false }) {
                             DropdownMenuItem(text = { Text("Appearance") }, leadingIcon = { Icon(Icons.Default.Palette, null) }, onClick = { menu = false; appearance = true })
+                            DropdownMenuItem(text = { Text("Check for updates") }, enabled = !state.busy,
+                                leadingIcon = { Icon(Icons.Default.SystemUpdate, null) },
+                                onClick = { menu = false; updateDialog = true; updates.check() })
                             DropdownMenuItem(text = { Text("Export edited backup") }, enabled = state.image != null && !state.busy,
                                 onClick = { menu = false; exportOriginal = false; export.launch("${state.model.id}-edited.bfp") })
                             DropdownMenuItem(text = { Text("Export original backup") }, enabled = state.image != null && !state.busy,
@@ -147,6 +154,7 @@ private fun Programmer(vm: ProgramViewModel = viewModel()) {
                 }
             }
         }
+        if (updateDialog) UpdateDialog(updates) { updateDialog = false }
         editor?.let { number ->
             state.memories.firstOrNull { it.number == number }?.let { channel ->
                 MemoryEditor(channel, state.model, onDismiss = { editor = null }, onSave = vm::saveMemory)

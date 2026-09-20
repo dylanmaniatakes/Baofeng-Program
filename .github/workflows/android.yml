@@ -27,4 +27,4 @@ jobs:
         run: sdkmanager 'platforms;android-35' 'build-tools;35.0.0'
       - name: Test, lint, and build
         working-directory: Android
-        run: ./gradlew :radio-core:test :app:lintDebug :app:assembleDebug --no-daemon
+        run: ./gradlew :radio-core:test :app:testDebugUnitTest :app:lintDebug :app:assembleDebug --no-daemon
