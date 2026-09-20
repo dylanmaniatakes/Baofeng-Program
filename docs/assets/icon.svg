@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="216" height="216" role="img" aria-label="Baofeng Programmer radio and tuning icon">
+  <rect width="108" height="108" rx="24" fill="#18231F"/>
+  <path fill="#7DD9C5" d="M35 24a3 3 0 0 1 6 0v15h-6zM60 33h5a2 2 0 0 1 2 2v5h-9v-5a2 2 0 0 1 2-2zM37 38h30a6 6 0 0 1 6 6v34a6 6 0 0 1-6 6H37a6 6 0 0 1-6-6V44a6 6 0 0 1 6-6z"/>
+  <path fill="#112C28" d="M41 46h22a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H41a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z"/>
+  <path fill="#E2C36A" d="M44 54v-3h3v3zM50 54v-5h3v5zM56 54v-7h3v7z"/>
+  <path stroke="#112C28" stroke-width="2.5" stroke-linecap="round" d="M41 66h22M41 74h22"/>
+  <path fill="#112C28" d="M46 62a4 4 0 1 1 0 8a4 4 0 1 1 0-8M57 70a4 4 0 1 1 0 8a4 4 0 1 1 0-8"/>
+  <path fill="none" stroke="#E2C36A" stroke-width="3" stroke-linecap="round" d="M68 24c6 1 11 6 12 12M67 30c3 1 6 4 7 7"/>
+</svg>
