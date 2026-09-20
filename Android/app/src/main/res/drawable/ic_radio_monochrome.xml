@@ -2,6 +2,8 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp" android:height="108dp"
     android:viewportWidth="108" android:viewportHeight="108">
+    <group android:pivotX="54" android:pivotY="54" android:scaleX="0.84" android:scaleY="0.84">
     <path android:fillColor="#FFFFFF" android:fillType="evenOdd" android:pathData="M35,24a3,3 0,0 1,6,0v14h17v-3a2,2 0,0 1,2,-2h5a2,2 0,0 1,2,2v3a6,6 0,0 1,6,6v34a6,6 0,0 1,-6,6h-30a6,6 0,0 1,-6,-6v-34a6,6 0,0 1,4,-5.65zM41,46h22a2,2 0,0 1,2,2v9a2,2 0,0 1,-2,2h-22a2,2 0,0 1,-2,-2v-9a2,2 0,0 1,2,-2zM40,64h24v4h-24zM40,72h24v4h-24z" />
     <path android:strokeColor="#FFFFFF" android:strokeWidth="3" android:strokeLineCap="round" android:pathData="M68,24c6,1 11,6 12,12M67,30c3,1 6,4 7,7" />
+    </group>
 </vector>

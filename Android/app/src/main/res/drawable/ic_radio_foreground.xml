@@ -2,10 +2,12 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp" android:height="108dp"
     android:viewportWidth="108" android:viewportHeight="108">
+    <group android:pivotX="54" android:pivotY="54" android:scaleX="0.84" android:scaleY="0.84">
     <path android:fillColor="#7DD9C5" android:pathData="M35,24a3,3 0,0 1,6,0v15h-6zM60,33h5a2,2 0,0 1,2,2v5h-9v-5a2,2 0,0 1,2,-2zM37,38h30a6,6 0,0 1,6,6v34a6,6 0,0 1,-6,6h-30a6,6 0,0 1,-6,-6v-34a6,6 0,0 1,6,-6z" />
     <path android:fillColor="#112C28" android:pathData="M41,46h22a2,2 0,0 1,2,2v9a2,2 0,0 1,-2,2h-22a2,2 0,0 1,-2,-2v-9a2,2 0,0 1,2,-2z" />
     <path android:fillColor="#E2C36A" android:pathData="M44,54v-3h3v3zM50,54v-5h3v5zM56,54v-7h3v7z" />
     <path android:strokeColor="#112C28" android:strokeWidth="2.5" android:strokeLineCap="round" android:pathData="M41,66h22M41,74h22" />
     <path android:fillColor="#112C28" android:pathData="M46,62a4,4 0,1 1,0,8a4,4 0,1 1,0,-8M57,70a4,4 0,1 1,0,8a4,4 0,1 1,0,-8" />
     <path android:strokeColor="#E2C36A" android:strokeWidth="3" android:strokeLineCap="round" android:pathData="M68,24c6,1 11,6 12,12M67,30c3,1 6,4 7,7" />
+    </group>
 </vector>
